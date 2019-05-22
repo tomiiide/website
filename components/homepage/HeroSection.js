@@ -7,7 +7,7 @@ export default function HeroSection() {
     <Logo />
     <div className="hero-text">
       <h2>Hi, I'm Tomide Oladipo</h2>
-      <p> I design digital experiences.</p>
+      <p>  A digital architect.</p>
     </div>
     <style>
       {`

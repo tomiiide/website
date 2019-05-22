@@ -69,7 +69,7 @@ const WorkComponent = (props) => {
     <h3 className="work-title">{name}</h3>
     <div className="images">
     {
-       images.map( image => <img src={image} alt={ `${name}'s website` }/> ) 
+       images.map( (image,i) => <img key={i} src={image} alt={ `${name}'s website` }/> ) 
     }
     </div>
     <a className="button" href={link}> View Project </a> 
@@ -116,7 +116,7 @@ export default function WorksSection() {
       <p className="title">Works</p>
 
       {
-        works.map( work => <WorkComponent name={work.name} link={""} images={work.images}/>)
+        works.map( (work,i) => <WorkComponent key={i} name={work.name} link={""} images={work.images}/>)
       }
 
       <style jsx>
