@@ -1,42 +1,18 @@
-import Logo from "./../components/icons/Logo"
 import React from "react"
+import HeroSection from "./../components/homepage/HeroSection";
+import WorksSection from "./../components/homepage/WorksSection";
+import Head from "next/head";
 
 function Home() {
   return (
-    <section className="body">
-      <Logo />
-      <div className="hero">
-        <h2>Hi, I'm Tomide Oladipo</h2>
-        <p>A UI / UX Designer & Frontend Dev</p>
-      </div>
-      <style>
-        {`
-        @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+    <React.Fragment>
+      <Head>
+        <title> Tomide Oladipo </title>
+      </Head>
 
-          body,html{
-            margin: 0;
-            padding: 0;
-            font-family: "Lato";
-          }
-
-          
-          `}
-      </style>
-
-      <style jsx>
-        {`
-          .body {
-            background-color: black;
-            padding: 20px;
-          }
-
-          .hero {
-            color: white;
-            padding-bottom: 80px;
-          }
-        `}
-      </style>
-    </section>
+      <HeroSection/>
+      <WorksSection/>
+    </React.Fragment>
   )
 }
 
