@@ -23,7 +23,6 @@ export default function HeroSection() {
           overflow-x: hidden;
           display:relative;
         }
-
         
         `}
     </style>
