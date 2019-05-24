@@ -69,7 +69,7 @@ const WorkComponent = (props) => {
     <h3 className="work-title">{name}</h3>
     <div className="images">
     {
-       images.map( (image,i) => <img key={i} src={image} alt={ `${name}'s website` }/> ) 
+       images.map( (image,i) => <img key={i} src={`.${image}`} alt={ `${name}'s website` }/> ) 
     }
     </div>
     <a className="button" href={link}> View Project </a> 
