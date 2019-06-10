@@ -1,0 +1,25 @@
+section.works {
+    background-color: black;
+    padding: 20px;
+
+}
+
+.title {
+    font-weight: bold;
+    font-size: 36px;
+    position: relative;
+    color: white;
+    margin: 0;
+}
+
+.title::after {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 20%;
+    background-color: white;
+    content: " ";
+    height: 8px;
+    border-radius: 8px;
+    opacity: 0.9;
+}

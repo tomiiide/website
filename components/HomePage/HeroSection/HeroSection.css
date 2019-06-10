@@ -1,0 +1,15 @@
+.hero {
+    padding: 25px 10px;
+}
+
+.hero-text {
+    padding-bottom: 10px;
+    line-height: 0.4;
+    margin-top: 60px;
+}
+
+.logo {
+    cursor: pointer;
+    position: fixed;
+    width: fit-content;
+}

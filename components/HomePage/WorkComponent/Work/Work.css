@@ -1,0 +1,18 @@
+.work {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.work p {
+    background-color: blueviolet;
+    margin: 0;
+    width: max-content;
+    padding: 5px 25px 5px 10px;
+    border-top-right-radius: 100px;
+
+}
+
+img {
+    height: auto;
+    width: 100%;
+}

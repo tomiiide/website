@@ -1,0 +1,60 @@
+.sidedrawer {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.sidedrawer .ds {
+    margin-left: 30px;
+}
+
+.sidedrawer .ds p {
+    font-size: 40px;
+}
+
+.sidedrawer .close {
+    background-color: black;
+    color: white;
+    width: min-content;
+    padding: 10px;
+    border-radius: 49%;
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 20px 10px;
+
+}
+
+.sidedrawer .socials {
+    margin-left: 30px;
+}
+
+.sidedrawer .socials p {
+    font-size: 15px;
+}
+
+.sidedrawer .socials div {
+    display: flex;
+}
+
+.sidedrawer .socials a {
+    text-decoration: none;
+    color: black;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.Open {
+    transform: translateX(0)
+}
+
+.Close {
+    transform: translateX(-100%);
+}
