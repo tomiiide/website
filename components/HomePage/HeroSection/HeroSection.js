@@ -4,17 +4,17 @@ import "./HeroSection.css"
 
 const HeroSection = ({ clicked }) => (
   <section className="hero">
-    <div className="logo" onClick={() => clicked}>
+    <div className="logo" onClick={clicked}>
       <Logo />
     </div>
     <div className="hero-text">
-      <h2>Hiii,</h2>
-      <h2> my name is,</h2>
-      <h2>tomide oladapo.</h2>
+      <h2>Hiii, <br/>
+      my name is, <br/>
+      tomide oladipo.</h2>
     </div>
     <div style={{ color: "white" }}>
       <p>
-        I care about building amazing products that works. <br />
+        I build amazing products that deliver the best experience. <br /> <br/>
         I’m fascinated by how design and code interact to create products that
         deliver memorable experiences while solving problems in a simple way.
       </p>

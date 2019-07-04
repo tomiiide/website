@@ -5,6 +5,7 @@ import WorksSection from "../components/WorkSection/WorksSection"
 import SideDrawer from "../components/SideDrawer/SideDrawer"
 import Backdrop from "../components/SideDrawer/Backdrop/Backdrop"
 import Head from "next/head"
+import ContactComponent from  "../components/contact/ContactComponent";
 import "../styles/index.css"
 
 class Home extends Component {
@@ -36,6 +37,7 @@ class Home extends Component {
           <Backdrop show={this.state.openSide} />
           <HeroSection clicked={this.ToggleMenu} />
           <WorkComponent />
+          <ContactComponent/>
         </div>
 
         {/* <WorksSection /> */}

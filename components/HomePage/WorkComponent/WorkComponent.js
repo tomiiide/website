@@ -6,18 +6,7 @@ import Work from "./Work/Work"
 const workComponent = props => (
   <Aux>
     <div className="work-header">
-      <h3>Work</h3>
-      <ul>
-        <li>
-          <a href="">All</a>
-        </li>
-        <li>
-          <a href="">Design</a>
-        </li>
-        <li>
-          <a href="">Code</a>
-        </li>
-      </ul>
+      <h3>My Work</h3>
     </div>
     <div className="workComponent">
       {Images.map(i => (

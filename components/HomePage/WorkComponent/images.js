@@ -1,26 +1,20 @@
 const images = [
   {
-    name: "Swiftcare",
-    image: "/static/images/projects/swiftecare/desktop.jpg",
-    color: "pink",
-    text: "white",
-  },
-  {
-    name: "Govee",
-    image: "/static/images/projects/govee/desktop.jpg",
-    color: "#28659b",
+    name: "Tipify",
+    image: "https://res.cloudinary.com/tomiiide/image/upload/v1562247175/tomiiide.com/tipify/presentation2.jpg",
+    color: "#392075",
     text: "white",
   },
   {
     name: "ProManager",
-    image: "/static/images/projects/promanager/Landing Page Dark.jpg",
+    image: "https://res.cloudinary.com/tomiiide/image/upload/v1562247306/tomiiide.com/promanager/promanager-presentation.jpg",
     color: "#f9bd0e",
     text: "black",
   },
   {
-    name: "CSI Media",
-    image: "/static/images/projects/csimedia/desktop.jpg",
-    color: "#b14a61",
+    name: "Govee",
+    image: "https://res.cloudinary.com/tomiiide/image/upload/v1562246931/tomiiide.com/govee/presentation.jpg",
+    color: "#014A2C",
     text: "white",
   },
 ]
