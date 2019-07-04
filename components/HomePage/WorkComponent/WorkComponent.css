@@ -1,0 +1,25 @@
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 30px;
+    border-top: 3px dotted #9e9e9e;
+}
+
+.work-header ul {
+    list-style: none;
+}
+
+.work-header ul li {
+    display: inline-block;
+    margin: 0 10px 0 5px;
+}
+
+.work-header ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.workComponent {
+    background-color: black;
+}
