@@ -19,3 +19,10 @@ body {
     background-color: black;
     width: 100%;
 }
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    /* Styles */
+    
+}

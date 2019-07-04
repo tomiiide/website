@@ -7,6 +7,7 @@
     "export": "npm run build && next export"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.14",
     "@zeit/next-css": "^1.0.1",
     "i": "^0.3.6",
     "next": "^8.1.0",

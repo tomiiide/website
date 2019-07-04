@@ -7,6 +7,7 @@
 .hero-text {
     padding-bottom: 10px;
     margin-top: 120px;
+    
 }
 
 .logo {
@@ -17,5 +18,21 @@
 
 .hero p{
     font-size: 14px;
+}
 
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1024px) {
+    /* Styles */
+ .hero-text{
+     margin-top: 160px;
+ }   
+
+ .hero {
+     font-size: 42px;
+ }
+
+ .hero  p {
+    font-size: 20px;
+    max-width: 80%;
+ }
 }
