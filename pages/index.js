@@ -18,17 +18,18 @@ class Home extends Component {
     super(props)
     this.state = {
       openSide: false,
+      loaded: false
     }
   }
 
   ToggleMenu = e => {
-    console.log(e.target)
     this.setState(prevState => {
       return { openSide: !prevState.openSide }
     })
   }
   render() {
     const { state } = this
+    const _state = state;
     return (
       <React.Fragment>
         <Head>
@@ -43,13 +44,17 @@ class Home extends Component {
             licenseKey="4A80502E-A0AE42C6-A94FDFD9-8E6A4797"
             pluginWrapper={pluginWrapper}
             scrollOverflow={true}
+            afterRender={() => {
+              this.setState({loaded: true});
+            }
+          }
             render={({ state, fullpageApi }) => {
               return (
                 <ReactFullpage.Wrapper>
                   <div className="section">
-                    <HeroSection clicked={this.ToggleMenu} />
+                    <HeroSection clicked={this.ToggleMenu} loaded={_state.loaded} />
                   </div>
-                  <div className="section">
+                  <div className="section"> 
                     <WorkComponent />
                     <ContactComponent />
                   </div>
