@@ -8,7 +8,8 @@ import ContactComponent from "../components/homepage/ContactSection/ContactCompo
 import Logo from "../components/homepage/Logo"
 import "../styles/index.css"
 import ReactFullpage from "@fullpage/react-fullpage"
-
+import { nullLiteral } from "@babel/types"
+ 
 const pluginWrapper = () => {
   require("fullpage.js/vendors/scrolloverflow")
 }
@@ -18,7 +19,7 @@ class Home extends Component {
     super(props)
     this.state = {
       openSide: false,
-      loaded: false
+      loaded: false,
     }
   }
 
@@ -29,32 +30,45 @@ class Home extends Component {
   }
   render() {
     const { state } = this
-    const _state = state;
+    const _state = state
     return (
       <React.Fragment>
         <Head>
           <title> Tomide Oladipo </title>
         </Head>
         <div className="homepage">
-          <SideDrawer clicked={this.ToggleMenu} togglemenu={state.openSide} />
-          <Backdrop show={state.openSide} />
-          <Logo clicked={this.ToggleMenu} sidebarOpen={state.openSide} />
+          {state.loaded ? (
+            <React.Fragment>
+              <SideDrawer
+                clicked={this.ToggleMenu}
+                togglemenu={state.openSide}
+              />
+              <Backdrop show={state.openSide} />
+              <Logo
+                clicked={this.ToggleMenu}
+                sidebarOpen={state.openSide}
+                loaded={state.loaded}
+              />
+            </React.Fragment>
+          ) : null}
 
           <ReactFullpage
             licenseKey="4A80502E-A0AE42C6-A94FDFD9-8E6A4797"
             pluginWrapper={pluginWrapper}
             scrollOverflow={true}
             afterRender={() => {
-              this.setState({loaded: true});
-            }
-          }
+              this.setState({ loaded: true })
+            }}
             render={({ state, fullpageApi }) => {
               return (
                 <ReactFullpage.Wrapper>
                   <div className="section">
-                    <HeroSection clicked={this.ToggleMenu} loaded={_state.loaded} />
+                    <HeroSection
+                      clicked={this.ToggleMenu}
+                      loaded={_state.loaded}
+                    />
                   </div>
-                  <div className="section"> 
+                  <div className="section">
                     <WorkComponent />
                     <ContactComponent />
                   </div>

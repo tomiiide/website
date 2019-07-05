@@ -1,9 +1,15 @@
 import React from "react"
 import LogoIcon from "../icons/Logo"
+import pose from "react-pose"
 
-const Logo = ({ clicked, sidebarOpen }) => {
+const LogoAnimation = pose.div({
+  enter: { opacity: 1, scale: 1, transition: {duration: 1200 ,type: 'spring', stiffness: 100 } },
+  exit: { opacity: 0, scale: 0 },
+})
+
+const Logo = ({ clicked, sidebarOpen,loaded }) => {
   return (
-    <div className="logo" onClick={clicked}>
+    <LogoAnimation className="logo" onClick={clicked} initialPose="exit" pose="enter">
       {sidebarOpen ? (
         <svg
           width="44"
@@ -29,19 +35,17 @@ const Logo = ({ clicked, sidebarOpen }) => {
         <LogoIcon />
       )}
 
-      <style jsx>
-        {`
-          .logo {
-            cursor: pointer;
-            position: fixed;
-            width: fit-content;
-            top: 40px;
-            left: 10px;
-            z-index: 99;
-          }
-        `}
-      </style>
-    </div>
+      <style>{`
+        .logo {
+          cursor: pointer;
+          position: fixed;
+          width: fit-content;
+          top: 40px;
+          left: 10px;
+          z-index: 99;
+        }
+      `}</style>
+    </LogoAnimation>
   )
 }
 

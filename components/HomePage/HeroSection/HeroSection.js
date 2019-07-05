@@ -1,101 +1,121 @@
-import React from "react"
+import React, {Component} from "react"
 import SplitText from "react-pose-text"
 import posed, { PoseGroup } from "react-pose"
 
-const charPoses = {
-  exit: { opacity: 0, y: 20 },
+
+const SubText = posed.div({
+  enter: { opacity: 1, beforeChildren: true, staggerChildren: 100 },
+  exit: { opacity: 0},
+})
+
+const typewriter = {
+  exit: { opacity: 0, x: 20 },
   enter: {
     opacity: 1,
-    y: 0,
+    x: 0,
     delay: ({ charIndex }) => charIndex * 100,
   },
 }
 
-const HeroSection = ({ clicked, loaded }) => {
-  console.log(loaded)
+const Text = posed.div({
+  enter: { opacity: 1, height: "auto", delay: 500 },
+  exit: { opacity: 0, height: 0 }
+})
 
-  return (
-    <section className="hero">
-      <div className="hero-text">
-        
-          <h2>
-            <SplitText
-              key="hiii"
-              initialPose="exit"
-              pose="enter"
-              charPoses={charPoses}
-            >
-              Hiii,
-            </SplitText>
+const HeroText = posed.h2({
+  enter: {
+    opacity: 1,
+    beforeChildren: true,
+    staggerChildren: 1000,
+  },
+  exit: { opacity: 0, },
+})
+
+export default class HeroSection extends Component {
+
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      heroTextAnimated: false
+    }
+  }
+
+  render() {
+    const {clicked, loaded} = this.props;
+    const {heroTextAnimated} = this.state;
+    return (
+      <section className="hero">
+        <HeroText className="hero-text" initialPose="exit" pose="enter" onPoseComplete={() => { console.log("pose complete"); this.setState({heroTextAnimated:true})}}>
+          <Text initialPose="exit" pose="enter">
+            Hiii,
             <br />
-            <SplitText
-              key="name"
-              initialPose="exit"
-              pose="enter"
-              charPoses={charPoses}
-            >
-              my name is,
-            </SplitText>
+          </Text>
+  
+          <Text initialPose="exit" pose="enter">
+            my name is,
             <br />
-            <SplitText
-              key="tomide"
-              initialPose="exit"
-              pose="enter"
-              charPoses={charPoses}
-            >
-              tomide oladipo.
+          </Text>
+  
+          <Text initialPose="exit" pose="enter">
+            tomide oladipo.
+          </Text>
+        </HeroText>
+        <div style={{ color: "white" }}>
+          <SubText className="sub-text" pose={heroTextAnimated ? "enter" : "exit"} initialPose="exit">
+            <SplitText charPoses={typewriter}>
+              I build products that deliver excellent user experience.
             </SplitText>
-          </h2>
-        
-      </div>
-      <div style={{ color: "white" }}>
-        <p>
-          I build products that deliver excellent user experience. <br /> <br />
-          I’m fascinated by how design and code interact to create products that
-          deliver memorable experiences while solving problems in a simple way.
-        </p>
-      </div>
-
-      <style jsx>{`
-        * {
-          animation-fill-mode: both;
-        }
-
-        .hero {
-          padding: 40px 10px 60px;
-          font-size: 36px;
-          margin-bottom: 40px;
-          visibility: ${loaded ? "visible" : "hidden"};
-        }
-
-        .hero-text {
-          padding-bottom: 10px;
-          margin-top: 40px;
-        }
-
-        .hero p {
-          font-size: 14px;
-        }
-
-        /* Desktops and laptops ----------- */
-        @media only screen and (min-width: 1024px) {
-          /* Styles */
-          .hero-text {
-            margin-top: 120px;
+            <br /> <br />
+            <SplitText  charPoses={typewriter}>
+              I’m fascinated by how design and technology interact to transform solutions into memorable experiences.
+            </SplitText>
+          </SubText>
+        </div>
+  
+        <style>{`
+  
+          section.hero {
+            padding: 40px 10px 60px;
+            font-size: 36px;
+            margin-bottom: 40px;
+            visibility: ${loaded ? "visible" : "hidden"};
           }
-
-          .hero {
-            font-size: 42px;
+  
+          * {
+            animation-fill-mode: both;
           }
-
-          .hero p {
-            font-size: 20px;
-            max-width: 80%;
+  
+          
+          section.hero hero-text {
+            padding-bottom: 10px;
+            margin-top: 40px;
           }
-        }
-      `}</style>
-    </section>
-  )
+  
+          section.hero .sub-text {
+            font-size: 14px;
+          }
+  
+          /* Desktops and laptops ----------- */
+          @media only screen and (min-width: 1024px) {
+            /* Styles */
+            section.hero-text {
+              margin-top: 120px;
+            }
+  
+            section.hero {
+              font-size: 42px;
+            }
+  
+            section.hero .sub-text {
+              font-size: 20px;
+              max-width: 80%;
+            }
+          }
+        `}</style>
+      </section>
+    )
+  }
 }
 
-export default HeroSection
