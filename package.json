@@ -13,7 +13,9 @@
     "next": "^8.1.0",
     "npm": "^6.9.0",
     "react": "^16.8.6",
+    "react-cursor-position": "^3.0.3",
     "react-dom": "^16.8.6",
+    "react-ga": "^2.6.0",
     "react-pose": "^4.0.8",
     "react-pose-text": "^3.1.0",
     "react-spring": "^8.0.27"

@@ -31,6 +31,17 @@ const HeroText = posed.h2({
   exit: { opacity: 0, },
 })
 
+const Button = posed.a({
+  enter: {
+    opacity: 1,
+    scale: 1
+  },
+  exit: {
+    opacity:0,
+    scale: 0
+  }
+})
+
 export default class HeroSection extends Component {
 
 
@@ -38,16 +49,18 @@ export default class HeroSection extends Component {
     super(props);
 
     this.state = {
-      heroTextAnimated: false
+      heroTextAnimated: false,
+      subTextAnimated: false
     }
   }
 
   render() {
-    const {clicked, loaded} = this.props;
-    const {heroTextAnimated} = this.state;
+    const {clicked, loaded, fullpageApi} = this.props;
+    console.log(this.props);
+    const {heroTextAnimated, subTextAnimated} = this.state;
     return (
       <section className="hero">
-        <HeroText className="hero-text" initialPose="exit" pose="enter" onPoseComplete={() => { console.log("pose complete"); this.setState({heroTextAnimated:true})}}>
+        <HeroText className="hero-text" initialPose="exit" pose="enter" onPoseComplete={() => { this.setState({heroTextAnimated:true})}}>
           <Text initialPose="exit" pose="enter">
             Hiii,
             <br />
@@ -63,15 +76,19 @@ export default class HeroSection extends Component {
           </Text>
         </HeroText>
         <div style={{ color: "white" }}>
-          <SubText className="sub-text" pose={heroTextAnimated ? "enter" : "exit"} initialPose="exit">
+          <SubText className="sub-text" pose={heroTextAnimated ? "enter" : "exit"} initialPose="exit" onPoseComplete={(pose) => { if(pose=="enter") this.setState({subTextAnimated:true})}}>
             <SplitText charPoses={typewriter}>
               I build products that deliver excellent user experience.
             </SplitText>
             <br /> <br />
-            <SplitText  charPoses={typewriter}>
+            <SplitText  charPoses={typewriter} >
               I’m fascinated by how design and technology interact to transform solutions into memorable experiences.
             </SplitText>
           </SubText>
+          
+          <Button onClick={() => {fullpageApi.moveSectionDown() }} className="button" pose={subTextAnimated ? "enter" : "exit"} initialPose="exit">
+          View my work
+          </Button>
         </div>
   
         <style>{`
@@ -95,6 +112,11 @@ export default class HeroSection extends Component {
   
           section.hero .sub-text {
             font-size: 14px;
+          }
+
+          .button {
+            margin: 40px 0 0;
+            display: block;
           }
   
           /* Desktops and laptops ----------- */

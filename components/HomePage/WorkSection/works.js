@@ -20,5 +20,9 @@ const images = [
     text: "white",
     link: "https://www.notion.so/tomiiide/Designing-Govee-enhancing-the-vegan-vegetarian-lifestyle-A-Product-Case-Study-0401eeae53cb4732aec4eb92febd1af7"
   },
+  {
+    name: "Empty space here, have an idea to fill it up?",
+    last: true
+  }
 ]
 export default images

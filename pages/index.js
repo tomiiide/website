@@ -8,8 +8,8 @@ import ContactComponent from "../components/homepage/ContactSection/ContactCompo
 import Logo from "../components/homepage/Logo"
 import "../styles/index.css"
 import ReactFullpage from "@fullpage/react-fullpage"
-import { nullLiteral } from "@babel/types"
- 
+import Cursor from "../components/Cursor"
+
 const pluginWrapper = () => {
   require("fullpage.js/vendors/scrolloverflow")
 }
@@ -20,6 +20,8 @@ class Home extends Component {
     this.state = {
       openSide: false,
       loaded: false,
+      activeSection: 0,
+      fullpageApi: {},
     }
   }
 
@@ -28,6 +30,12 @@ class Home extends Component {
       return { openSide: !prevState.openSide }
     })
   }
+
+  sectionChange = (origin, destination, direction) => {
+    this.setState({ activeSection: destination.index });
+    this.fullpageApi.reBuild();
+  }
+
   render() {
     const { state } = this
     const _state = state
@@ -35,10 +43,13 @@ class Home extends Component {
       <React.Fragment>
         <Head>
           <title> Tomide Oladipo </title>
+          <link rel="icon" href="static/favicon.ico" />
         </Head>
+
         <div className="homepage">
           {state.loaded ? (
             <React.Fragment>
+              <Cursor openSide={state.openSide}/>
               <SideDrawer
                 clicked={this.ToggleMenu}
                 togglemenu={state.openSide}
@@ -56,21 +67,29 @@ class Home extends Component {
             licenseKey="4A80502E-A0AE42C6-A94FDFD9-8E6A4797"
             pluginWrapper={pluginWrapper}
             scrollOverflow={true}
+            scrollOverflowReset={true}
+            
             afterRender={() => {
               this.setState({ loaded: true })
             }}
+            onLeave={this.sectionChange}
             render={({ state, fullpageApi }) => {
-              return (
+              this.fullpageApi = fullpageApi
+              return ( 
                 <ReactFullpage.Wrapper>
                   <div className="section">
                     <HeroSection
                       clicked={this.ToggleMenu}
                       loaded={_state.loaded}
+                      active={this.state.activeSection === 1}
+                      fullpageApi={fullpageApi}
                     />
                   </div>
                   <div className="section">
-                    <WorkComponent />
-                    <ContactComponent />
+                    <WorkComponent
+                      loaded={_state.loaded}
+                      active={this.state.activeSection === 1}
+                    />
                   </div>
                 </ReactFullpage.Wrapper>
               )
