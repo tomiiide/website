@@ -56,7 +56,6 @@ export default class HeroSection extends Component {
 
   render() {
     const {clicked, loaded, fullpageApi} = this.props;
-    console.log(this.props);
     const {heroTextAnimated, subTextAnimated} = this.state;
     return (
       <section className="hero">

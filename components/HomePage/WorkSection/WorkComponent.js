@@ -4,14 +4,10 @@ import Works from "./works"
 import Work from "./Work/Work"
 import posed, { PoseGroup } from "react-pose"
 
-
-
-
-
 export default class WorkComponent extends Component {
   
   render() {
-    const { loaded, active } = this.props
+    const {  active } = this.props
     return (
       <Aux>
         <div className="workComponent">

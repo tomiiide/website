@@ -18,7 +18,7 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      openSide: false,
+      openSide: true,
       loaded: false,
       activeSection: 0,
       fullpageApi: {},

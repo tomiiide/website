@@ -8,30 +8,27 @@ const sideDrawer = ({ togglemenu, clicked }) => {
   return (
     <div className={classes.join(" ")}>
       <div className="ds">
-        <p>Work</p>
-        <p>Start a project</p>
+        <a href="#work">
+          <p>Work</p>
+        </a>
+        <a href="http://bit.ly/talk-to-tomiiide" target="_blank">
+          <p>Start a project</p>
+        </a>
       </div>
       <div className="socials">
         <p>SOCIALS</p>
         <div>
-          <a href="">Twitter</a>
-          <a href="">Instagram</a>
-        </div>
-        <div>
-          <a href="">Email</a>
-          <a href="">Resume</a>
-        </div>
-        <div>
-          <a href="">Dribble</a>
-          <a href="">Behance</a>
-        </div>
-        <div>
-          <a href="">GitHub</a>
-          <a href="">Medium</a>
-        </div>
-        <div>
-          <a href="">Scotch.io</a>
-          <a href="">Dev.to</a>
+          <a href="https://twitter.com/tomiiide">Twitter</a>
+          <a href="https://instagram.com/tomiiide">Instagram</a>
+
+          <a href="mailto:ayotomiiide@gmail.com">Email</a>
+          <a href="https://visualcv.com/tomiiide">Resume</a>
+
+          <a href="https://dribbble.com/tomiiide">Dribbble</a>
+          <a href="https://behance.net/tomiiide">Behance</a>
+
+          <a href="https://github.com/tomiiide">GitHub</a>
+          <a href="https://medium.com/tomiiide">Medium</a>
         </div>
       </div>
       <style jsx>
@@ -74,19 +71,22 @@ const sideDrawer = ({ togglemenu, clicked }) => {
           }
 
           .sidedrawer .socials p {
-            font-size: 15px;
+            font-size: 12px;
           }
 
           .sidedrawer .socials div {
             display: flex;
+            flex-wrap: wrap;
           }
 
           .sidedrawer .socials a {
             text-decoration: none;
             color: black;
-            width: 100px;
+            width: 140px;
             margin-top: 10px;
             cursor: pointer;
+            font-size: 18px;
+            padding: 10px 0 20px;
           }
 
           .Open {
@@ -95,6 +95,18 @@ const sideDrawer = ({ togglemenu, clicked }) => {
 
           .Close {
             transform: translateX(-100%);
+          }
+
+          a {
+            color: black;
+          }
+
+          /* Desktops and laptops ----------- */
+          @media only screen and (min-width: 1024px) {
+            /* Styles */
+            .sidedrawer .socials a {
+              width: 200px;
+            }
           }
         `}
       </style>

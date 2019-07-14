@@ -22,7 +22,7 @@ const work = ({ name, image, text, color, link, index, last, active }) => {
         <Work className="work last" index={index} initialPose="exit" pose="enter">
           <div className="details">
             <p>Empty space here, have an idea to fill it up?</p>
-            <a href="http://bit.ly/talk-to-tomiiide" className="button">
+            <a href="http://bit.ly/talk-to-tomiiide" target="_blank" className="button">
               Let's talk
             </a>
           </div>
