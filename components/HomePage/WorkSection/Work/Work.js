@@ -31,7 +31,7 @@ const work = ({ name, image, text, color, link, index, last, active }) => {
         <Work className="work" index={index} initialPose="exit" pose="enter">
           <Details initialPose={"exit"} pose={"enter"} className="details">
             <p>{name}</p>
-            <a target="_blank" href={link}>Read Case Study</a>
+            <a className="button" target="_blank" href={link}>Read Case Study</a>
           </Details>
 
           <div className="img-wrapper">

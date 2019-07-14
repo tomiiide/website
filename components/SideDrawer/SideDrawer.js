@@ -9,7 +9,7 @@ const sideDrawer = ({ togglemenu, clicked }) => {
     <div className={classes.join(" ")}>
       <div className="ds">
         <a href="#work">
-          <p>Work</p>
+          <p>My work</p>
         </a>
         <a href="http://bit.ly/talk-to-tomiiide" target="_blank">
           <p>Start a project</p>
