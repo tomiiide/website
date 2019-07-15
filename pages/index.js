@@ -10,6 +10,7 @@ import "../styles/index.css"
 import ReactFullpage from "@fullpage/react-fullpage"
 import Cursor from "../components/Cursor"
 
+
 const pluginWrapper = () => {
   require("fullpage.js/vendors/scrolloverflow")
 }

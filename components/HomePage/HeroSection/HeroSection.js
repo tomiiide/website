@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import SplitText from "react-pose-text"
 import posed, { PoseGroup } from "react-pose"
+import Background from './Background';
 
 
 const SubText = posed.div({
@@ -50,15 +51,30 @@ export default class HeroSection extends Component {
 
     this.state = {
       heroTextAnimated: false,
-      subTextAnimated: false
+      subTextAnimated: false,
+      upX : -1,
+        upY: -1
     }
   }
 
+  handleMouseMove = (event) => {
+    event.preventDefault();
+    var upX = event.clientX;
+    var upY = event.clientY;
+
+    this.setState({
+        upX,
+        upY
+    });
+}
+
   render() {
     const {clicked, loaded, fullpageApi} = this.props;
-    const {heroTextAnimated, subTextAnimated} = this.state;
+    const {heroTextAnimated, subTextAnimated, upX, upY} = this.state;
     return (
-      <section className="hero">
+      <section className="hero" onMouseMove={this.handleMouseMove}>
+        <Background upX={upX} upY={upY}/>
+        <div className="content">
         <HeroText className="hero-text" initialPose="exit" pose="enter" onPoseComplete={() => { this.setState({heroTextAnimated:true})}}>
           <Text initialPose="exit" pose="enter">
             Hiii,
@@ -89,6 +105,7 @@ export default class HeroSection extends Component {
           View my work
           </Button>
         </div>
+        </div>
   
         <style>{`
   
@@ -97,6 +114,12 @@ export default class HeroSection extends Component {
             font-size: 36px;
             margin-bottom: 40px;
             visibility: ${loaded ? "visible" : "hidden"};
+          }
+
+          .content {
+            position: relative;
+            z-index:3;
+          
           }
   
           * {
