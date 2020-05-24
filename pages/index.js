@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import HeroSection from "../components/HomePage/HeroSection/HeroSection"
-import WorkComponent from "../components/HomePage/WorkSection/WorkComponent"
+import HeroSection from "../components/homepage/HeroSection/HeroSection"
+import WorkComponent from "../components/homepage/WorkSection/WorkComponent"
 import SideDrawer from "../components/SideDrawer/SideDrawer"
 import Backdrop from "../components/SideDrawer/Backdrop/Backdrop"
 import Head from "next/head"
