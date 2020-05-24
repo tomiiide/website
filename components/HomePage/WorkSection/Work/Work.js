@@ -1,5 +1,5 @@
-import React from "./node_modules/react"
-import posed from "./node_modules/react-pose"
+import React from "react"
+import posed from "react-pose"
 
 const Details = posed.div({
   enter: { height: "100%", delay: 300 },

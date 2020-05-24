@@ -1,6 +1,6 @@
-import React, {Component} from "./node_modules/react"
-import SplitText from "./node_modules/react-pose-text"
-import posed, { PoseGroup } from "./node_modules/react-pose"
+import React, {Component} from "react"
+import SplitText from "react-pose-text"
+import posed, { PoseGroup } from "react-pose"
 import Background from './Background';
 
 

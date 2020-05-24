@@ -1,6 +1,6 @@
-import React from "./node_modules/react"
+import React from "react"
 import LogoIcon from "../icons/Logo"
-import pose from "./node_modules/react-pose"
+import pose from "react-pose"
 
 const LogoAnimation = pose.div({
   enter: { opacity: 1, scale: 1, transition: {duration: 1200 ,type: 'spring', stiffness: 100 } },
