@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from './node_modules/react'
 import Aux from "../../hoc/Aux"
 import Works from "./works"
 import Work from "./Work/Work"
-import posed, { PoseGroup } from "react-pose"
+import posed, { PoseGroup } from "./node_modules/react-pose"
 
 export default class WorkComponent extends Component {
   
