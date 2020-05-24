@@ -24,7 +24,7 @@ export default class Background extends Component {
             filter="url(#filter2)"
             xlinkHref="static/images/tomiiide-dark.jpg"
             width="100%"
-            height="120%"
+            height="140%"
           />
           <filter id="filter2">
             <fegaussianblur stdDeviation="5" />
@@ -41,7 +41,7 @@ export default class Background extends Component {
           <image
             xlinkHref="static/images/tomiiide.jpg"
             width="100%"
-            height="120%"
+            height="140%"
             mask="url(#mask1)"
           />
         </svg>
