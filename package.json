@@ -1,4 +1,6 @@
 {
+  "name": "tomiverse",
+  "description": "Tomiiide's digital universe",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -35,5 +37,14 @@
     "postcss-easy-import": "^3.0.0",
     "react-test-renderer": "^16.13.1",
     "tailwindcss": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomiiide/website.git"
+  },
+  "author": {
+    "name": "Ayotomide Oladipo",
+    "email": "ayotomiiide@gmail.com",
+    "url": "https://tomiiide.com"
   }
 }
