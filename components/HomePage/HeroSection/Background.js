@@ -55,7 +55,7 @@ export default class Background extends Component {
                     top: -10px;
                     left: -10px;
                     overflow: hidden;
-                    display:none;
+                    
                 }
                 .pic {
                     text-align: center;

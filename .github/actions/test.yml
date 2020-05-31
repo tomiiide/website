@@ -1,0 +1,8 @@
+name: 'Run tests'
+description: 'Run all jest tests to test snapshots and unit tests'
+runs:
+    using: 'node12'
+branding:
+    icon: 'check-square'
+    color: 'orange'
+

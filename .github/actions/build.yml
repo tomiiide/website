@@ -1,0 +1,12 @@
+name: Test PR
+
+on: [push]
+
+jobs:
+    build:
+        name: Run Tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Snapshot Test
+            - uses: ./.github/actions/test
+            

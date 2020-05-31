@@ -1,8 +1,8 @@
-const withCSS = require('@zeit/next-css')
+const withCSS = require("@zeit/next-css")
 module.exports = withCSS({
-    exportPathMap: function() {
-        return {
-          '/': { page: '/' }
-        }
-      }
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+    }
+  }
 })
