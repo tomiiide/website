@@ -1,4 +1,6 @@
 {
+  "name": "tomiverse",
+  "description": "Tomiiide's digital universe",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -6,11 +8,12 @@
     "test": "jest --verbose",
     "export": "next export",
     "deploy": "npm run build && npm run export"
-
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.17",
     "@zeit/next-css": "^1.0.1",
+    "babel-jest": "^26.0.1",
+    "babel-plugin-react-css-modules": "^5.2.6",
     "i": "^0.3.6",
     "next": "^8.1.0",
     "npm": "^6.14.5",
@@ -24,9 +27,24 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "cssnano": "^4.1.10",
     "jest": "^24.9.0",
+    "jest-css-modules": "^2.1.0",
     "postcss-easy-import": "^3.0.0",
+    "react-test-renderer": "^16.13.1",
     "tailwindcss": "^1.4.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomiiide/website.git"
+  },
+  "author": {
+    "name": "Ayotomide Oladipo",
+    "email": "ayotomiiide@gmail.com",
+    "url": "https://tomiiide.com"
   }
 }

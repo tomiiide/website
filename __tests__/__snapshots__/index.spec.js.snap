@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<React.Fragment>
+  <Head>
+    <title>
+       Tomide Oladipo 
+    </title>
+    <link
+      href="static/favicon.ico"
+      rel="icon"
+    />
+  </Head>
+  <div
+    className="homepage"
+  >
+    <ReactFullpage
+      afterRender={[Function]}
+      licenseKey="4A80502E-A0AE42C6-A94FDFD9-8E6A4797"
+      onLeave={[Function]}
+      pluginWrapper={[Function]}
+      render={[Function]}
+      scrollOverflow={true}
+      scrollOverflowReset={true}
+      sectionsColor={Array []}
+    />
+  </div>
+</React.Fragment>
+`;

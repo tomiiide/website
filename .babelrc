@@ -1,0 +1,9 @@
+{
+    "presets": ["next/babel"],
+    "env": {
+      "test": {
+        "plugins": ["inline-react-svg", "transform-export-extensions"]
+      }
+    }
+  }
+  

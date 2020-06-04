@@ -1,11 +1,8 @@
-
-describe("Test a simple function", () => {
-    it("2 + 2 to be 4", () => {
-        expect(2 + 2).toBe(4);
-    })
+import React from "react";
+import ShallowRenderer from "react-test-renderer/shallow";
+import IndexPage from "../pages/index";
+it("renders correctly", () => {
+  const renderer = new ShallowRenderer();
+  const result = renderer.render(<IndexPage/>);
+  expect(result).toMatchSnapshot();
 })
-
-
-const calculatePrime = () => {
-
-}
