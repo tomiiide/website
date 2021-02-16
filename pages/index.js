@@ -6,7 +6,7 @@ import Backdrop from "../components/SideDrawer/Backdrop/Backdrop"
 import Head from "next/head"
 import Logo from "../components/HomePage/Logo"
 import ReactFullpage from "@fullpage/react-fullpage"
-import Cursor from "../components/Cursor"
+
 
 
 const pluginWrapper = () => {
@@ -48,7 +48,6 @@ class Home extends Component {
         <div className="homepage">
           {state.loaded ? (
             <React.Fragment>
-              <Cursor openSide={state.openSide}/>
               <SideDrawer
                 clicked={this.ToggleMenu}
                 togglemenu={state.openSide}
