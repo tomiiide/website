@@ -5,7 +5,6 @@ import SideDrawer from "../components/SideDrawer/SideDrawer"
 import Backdrop from "../components/SideDrawer/Backdrop/Backdrop"
 import Head from "next/head"
 import Logo from "../components/HomePage/Logo"
-import "../styles/index.css"
 import ReactFullpage from "@fullpage/react-fullpage"
 import Cursor from "../components/Cursor"
 

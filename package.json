@@ -7,7 +7,8 @@
     "start": "next start",
     "test": "jest --verbose",
     "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "deploy": "npm run build && npm run export",
+    "postinstall": "npm link webpack"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.17",
@@ -15,7 +16,7 @@
     "babel-jest": "^26.0.1",
     "babel-plugin-react-css-modules": "^5.2.6",
     "i": "^0.3.6",
-    "next": "^8.1.0",
+    "next": "^10.0.7",
     "npm": "^6.14.5",
     "react": "^16.13.1",
     "react-cursor-position": "^3.0.3",
